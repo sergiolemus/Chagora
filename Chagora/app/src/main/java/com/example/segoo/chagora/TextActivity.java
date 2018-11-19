@@ -6,15 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class CallActivity extends AppCompatActivity {
+public class TextActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_call);
+        setContentView(R.layout.activity_text);
 
+        Button callActivity = (Button) findViewById(R.id.callBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
-        Button msgActivity = (Button) findViewById(R.id.msgBttn);
+        Button newMsgActivity = (Button) findViewById(R.id.newMsgBttn);
+
+        callActivity.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent callIntent = new Intent( getApplicationContext(), CallActivity.class );
+
+                startActivity( callIntent );
+            }
+        });
 
         settingsActivity.setOnClickListener( new View.OnClickListener() {
 
@@ -27,14 +39,14 @@ public class CallActivity extends AppCompatActivity {
             }
         });
 
-        msgActivity.setOnClickListener(new View.OnClickListener() {
+        newMsgActivity.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent msgIntent = new Intent( getApplicationContext(), TextActivity.class );
+                Intent newMsgIntent = new Intent( getApplicationContext(), NewMsgActivity.class );
 
-                startActivity( msgIntent );
+                startActivity( newMsgIntent );
             }
         });
 

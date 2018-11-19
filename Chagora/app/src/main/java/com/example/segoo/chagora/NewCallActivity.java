@@ -6,24 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class TextActivity extends AppCompatActivity {
+public class NewCallActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text);
+        setContentView(R.layout.activity_new_call);
 
-        Button callActivity = (Button) findViewById(R.id.callBttn);
+        Button msgActivity = (Button) findViewById(R.id.msgBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
 
-        callActivity.setOnClickListener( new View.OnClickListener() {
+        msgActivity.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent callIntent = new Intent( getApplicationContext(), CallActivity.class );
+                Intent msgIntent = new Intent( getApplicationContext(), TextActivity.class );
 
-                startActivity( callIntent );
+                startActivity( msgIntent );
             }
         });
 
@@ -37,6 +37,5 @@ public class TextActivity extends AppCompatActivity {
                 startActivity( settingsIntent );
             }
         });
-
     }
 }

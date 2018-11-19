@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".CallActivity" />
         <activity android:name=".TextActivity" />
+        <activity android:name=".NewCallActivity" />
+        <activity android:name=".NewMsgActivity"></activity>
     </application>
 
 </manifest>

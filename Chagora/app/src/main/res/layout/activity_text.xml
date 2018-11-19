@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CallActivity">
+    tools:context=".TextActivity">
 
     <Button
-        android:id="@+id/msgBttn"
+        android:id="@+id/textBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TEXT"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="CALL"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/msgBttn"
+        app:layout_constraintEnd_toStartOf="@+id/textBttn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -31,5 +31,13 @@
         android:text="SETTINGS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/msgBttn" />
+        app:layout_constraintStart_toEndOf="@+id/textBttn" />
+
+    <Button
+        android:id="@+id/newMsgBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEW"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
