@@ -5,18 +5,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class NewMsgActivity extends AppCompatActivity {
+public class MsgViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_msg);
+        setContentView(R.layout.activity_msg_view);
 
         Button callActivity = (Button) findViewById(R.id.callBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
-        Button cancelActivity = (Button) findViewById(R.id.cancelBttn);
-        Button newContactActivity = (Button) findViewById(R.id.newContactBttn);
+        Button backActivity = (Button) findViewById(R.id.backBttn);
 
         callActivity.setOnClickListener( new View.OnClickListener() {
 
@@ -40,26 +40,25 @@ public class NewMsgActivity extends AppCompatActivity {
             }
         });
 
-        cancelActivity.setOnClickListener( new View.OnClickListener() {
+        backActivity.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent cancelIntent = new Intent( getApplicationContext(), TextActivity.class );
+                Intent backIntent = new Intent( getApplicationContext(), TextActivity.class );
 
-                startActivity( cancelIntent );
+                startActivity( backIntent );
             }
         });
 
-        newContactActivity.setOnClickListener( new View.OnClickListener() {
+        if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
+        {
+            TextView firstnameView = (TextView) findViewById(R.id.firstnameTextView);
 
-            @Override
-            public void onClick(View v) {
+            String firstname = getIntent().getExtras().getString("com.example.segoo.chagora.FIRSTNAME");
 
-                Intent newContactIntent = new Intent( getApplicationContext(), NewContactActivity.class );
+            firstnameView.setText( firstname );
+        }
 
-                startActivity( newContactIntent );
-            }
-        });
     }
 }
