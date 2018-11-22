@@ -49,6 +49,8 @@
         android:id="@+id/backBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="BACK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,5 +69,29 @@
         android:typeface="normal"
         app:layout_constraintStart_toEndOf="@+id/backBttn"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/msgInputTextview"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Write a message"
+        android:inputType="textLongMessage"
+        app:layout_constraintBottom_toTopOf="@+id/callBttn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sendBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="SEND"
+        app:layout_constraintBottom_toTopOf="@+id/settingsBttn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
