@@ -14,6 +14,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="CALL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/msgBttn"
@@ -27,6 +28,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="SETTINGS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +42,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="TEXT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:text="BACK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="NAME"
         android:text="NAME"
         android:textSize="20sp"
@@ -69,19 +73,6 @@
         android:typeface="normal"
         app:layout_constraintStart_toEndOf="@+id/backBttn"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/msgInputTextview"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Write a message"
-        android:inputType="textLongMessage"
-        app:layout_constraintBottom_toTopOf="@+id/callBttn"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/sendBttn"
@@ -93,5 +84,18 @@
         android:text="SEND"
         app:layout_constraintBottom_toTopOf="@+id/settingsBttn"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/inputMsgTextView"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Write a message"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/msgBttn"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
