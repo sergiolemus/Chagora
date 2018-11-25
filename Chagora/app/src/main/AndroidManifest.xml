@@ -3,7 +3,7 @@
     package="com.example.segoo.chagora">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +23,9 @@
         <activity android:name=".NewCallActivity" />
         <activity android:name=".NewMsgActivity" />
         <activity android:name=".NewContactActivity" />
-        <activity android:name=".MsgViewActivity"></activity>
+        <activity android:name=".MsgViewActivity" />
+        <activity android:name=".NewCallContactActivity" />
+        <activity android:name=".CallViewActivity"></activity>
     </application>
 
 </manifest>

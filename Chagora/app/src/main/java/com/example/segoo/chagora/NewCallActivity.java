@@ -15,6 +15,11 @@ public class NewCallActivity extends AppCompatActivity {
 
         Button msgActivity = (Button) findViewById(R.id.msgBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
+        Button cancelActivity = (Button) findViewById(R.id.cancelButton);
+        Button newContactActivity = (Button) findViewById(R.id.newContactButton);
+
+
+
 
         msgActivity.setOnClickListener(new View.OnClickListener() {
 
@@ -37,5 +42,20 @@ public class NewCallActivity extends AppCompatActivity {
                 startActivity( settingsIntent );
             }
         });
-    }
+
+        cancelActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cancelIntent= new Intent(getApplicationContext(),CallActivity.class);
+                startActivity(cancelIntent);
+            }
+        });
+        newContactActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newContactIntent= new Intent(getApplicationContext(),NewCallContactActivity.class);
+                startActivity(newContactIntent);
+            }
+        });
+}
 }
