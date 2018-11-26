@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NewContactActivity extends AppCompatActivity {
+public class NewMsgContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_contact);
+        setContentView(R.layout.activity_new_msg_contact);
 
         Button callActivity = (Button) findViewById(R.id.callBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);

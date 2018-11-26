@@ -1,8 +1,8 @@
 package com.example.segoo.chagora;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,73 +14,26 @@ public class CallViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_view);
 
-        Button msgActivity = (Button) findViewById(R.id.text);
-        Button callActivity = (Button) findViewById(R.id.call);
-        Button settingsActivity = (Button) findViewById(R.id.settings);
-        Button backActivity = (Button) findViewById(R.id.backButton);
-        Button voiceActivity = (Button) findViewById(R.id.voiceCallButton);
-        Button videoActivity = (Button) findViewById(R.id.videoCallButton);
+        Button endCallActivity = (Button) findViewById(R.id.endCallBttn);
 
-        callActivity.setOnClickListener( new View.OnClickListener() {
+        endCallActivity.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent callIntent = new Intent( getApplicationContext(), CallActivity.class );
+                Intent endCallIntent = new Intent( getApplicationContext(), CallActivity.class );
 
-                startActivity( callIntent );
+                startActivity( endCallIntent );
             }
         });
 
-        settingsActivity.setOnClickListener( new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent settingsIntent = new Intent( getApplicationContext(), SettingsActivity.class );
-
-                startActivity( settingsIntent );
-            }
-        });
-
-        backActivity.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent backIntent = new Intent( getApplicationContext(), CallActivity.class );
-
-                startActivity( backIntent );
-            }
-        });
-        msgActivity.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent msgIntent = new Intent( getApplicationContext(), TextActivity.class );
-
-                startActivity( msgIntent );
-            }
-        });
-
-        if( getIntent().hasExtra("com.example.segoo.chagora.NAME") )
+        if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
         {
-            TextView firstnameView = (TextView) findViewById(R.id.nameTextView);
+            TextView firstnameView = (TextView) findViewById(R.id.firstnameTextView);
 
-            String firstname = getIntent().getExtras().getString("com.example.segoo.chagora.NAME");
+            String firstname = getIntent().getExtras().getString("com.example.segoo.chagora.FIRSTNAME");
 
             firstnameView.setText( firstname );
         }
-        if( getIntent().hasExtra("com.example.segoo.chagora.PHONENUMBER") )
-        {
-            TextView phoneView = (TextView) findViewById(R.id.phoneTextView);
-
-            String phoneNumber = getIntent().getExtras().getString("com.example.segoo.chagora.PHONENUMBER");
-
-            phoneView.setText( phoneNumber );
-        }
     }
 }
-
-

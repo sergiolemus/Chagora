@@ -20,10 +20,10 @@
         </activity>
         <activity android:name=".CallActivity" />
         <activity android:name=".TextActivity" />
-        <activity android:name=".NewCallActivity" />
         <activity android:name=".NewMsgActivity" />
-        <activity android:name=".NewContactActivity" />
+        <activity android:name=".NewMsgContactActivity" />
         <activity android:name=".MsgViewActivity" />
+        <activity android:name=".NewCallActivity" />
         <activity android:name=".NewCallContactActivity" />
         <activity android:name=".CallViewActivity"></activity>
     </application>

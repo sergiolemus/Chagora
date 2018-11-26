@@ -15,13 +15,10 @@ public class NewCallActivity extends AppCompatActivity {
 
         Button msgActivity = (Button) findViewById(R.id.msgBttn);
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
-        Button cancelActivity = (Button) findViewById(R.id.cancelButton);
-        Button newContactActivity = (Button) findViewById(R.id.newContactButton);
+        Button cancelActivity = (Button) findViewById(R.id.cancelBttn);
+        Button newContactActivity = (Button) findViewById(R.id.newContactBttn);
 
-
-
-
-        msgActivity.setOnClickListener(new View.OnClickListener() {
+        msgActivity.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -43,19 +40,26 @@ public class NewCallActivity extends AppCompatActivity {
             }
         });
 
-        cancelActivity.setOnClickListener(new View.OnClickListener() {
+        cancelActivity.setOnClickListener( new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent cancelIntent= new Intent(getApplicationContext(),CallActivity.class);
-                startActivity(cancelIntent);
+
+                Intent cancelIntent = new Intent( getApplicationContext(), CallActivity.class );
+
+                startActivity( cancelIntent );
             }
         });
-        newContactActivity.setOnClickListener(new View.OnClickListener() {
+
+        newContactActivity.setOnClickListener( new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent newContactIntent= new Intent(getApplicationContext(),NewCallContactActivity.class);
-                startActivity(newContactIntent);
+
+                Intent newContactIntent = new Intent( getApplicationContext(), NewCallContactActivity.class );
+
+                startActivity( newContactIntent );
             }
         });
-}
+    }
 }

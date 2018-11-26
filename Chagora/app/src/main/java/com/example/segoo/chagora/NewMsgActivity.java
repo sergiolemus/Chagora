@@ -56,7 +56,7 @@ public class NewMsgActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent newContactIntent = new Intent( getApplicationContext(), NewContactActivity.class );
+                Intent newContactIntent = new Intent( getApplicationContext(), NewMsgContactActivity.class );
 
                 startActivity( newContactIntent );
             }
