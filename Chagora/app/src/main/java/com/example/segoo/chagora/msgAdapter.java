@@ -13,13 +13,18 @@ public class msgAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
 
+    String otherUser;
+
     ArrayList<String> fromList;
     ArrayList<String> messages;
 
-    public msgAdapter( Context context, ArrayList<String> currentFromList, ArrayList<String> currentMessages )
+    public msgAdapter( Context context, String currentOtherUser, ArrayList<String> currentFromList, ArrayList<String> currentMessages )
     {
+        this.otherUser = currentOtherUser;
+
         this.fromList = currentFromList;
         this.messages = currentMessages;
+
         this.mInflater = (LayoutInflater) context.getSystemService( context.LAYOUT_INFLATER_SERVICE );
     }
 
@@ -41,6 +46,7 @@ public class msgAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
+        // THIS IS WHERE AN IF STATEMENT WOULD GO.
         View view = this.mInflater.inflate(R.layout.msg_in_listview, null);
 
         TextView msgTextView = view.findViewById(R.id.msgTextView);

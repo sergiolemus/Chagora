@@ -1,7 +1,6 @@
 package com.example.segoo.chagora;
 
 import android.content.Context;
-import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
@@ -17,9 +16,9 @@ public class msgAPI {
 
     private ArrayList<String> fromList;
     private ArrayList<String> messages;
-    private ArrayAdapter<String> messagesController;
+    private msgAdapter messagesController;
 
-    public msgAPI( Context context, ArrayList<String> currentFromList, ArrayList<String> currentMessages, ArrayAdapter<String> controller )
+    public msgAPI( Context context, ArrayList<String> currentFromList, ArrayList<String> currentMessages, msgAdapter controller )
     {
         this.fromList = currentFromList;
         this.messages = currentMessages;
@@ -36,7 +35,7 @@ public class msgAPI {
     {
         int uid = 0;
 
-        String token = "noneed_token";
+        String token = "_no_need_token";
         String deviceID = null;
 
         this.API.login( this.appid, user, token, uid, deviceID );
@@ -54,6 +53,4 @@ public class msgAPI {
         this.messages.add( msg );
         this.fromList.add( username );
     }
-
-
 }

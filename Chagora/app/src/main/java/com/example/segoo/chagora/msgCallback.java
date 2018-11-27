@@ -1,7 +1,5 @@
 package com.example.segoo.chagora;
 
-import android.widget.ArrayAdapter;
-
 import java.util.ArrayList;
 
 import io.agora.IAgoraAPI.ICallBack;
@@ -10,9 +8,9 @@ public class msgCallback implements ICallBack
 {
     private ArrayList<String> fromList;
     private ArrayList<String> messages;
-    private ArrayAdapter<String> messagesController;
+    private msgAdapter messagesController;
 
-    public msgCallback( ArrayList<String> currentFromList, ArrayList<String> currentMessagesList, ArrayAdapter<String> controller )
+    public msgCallback( ArrayList<String> currentFromList, ArrayList<String> currentMessagesList, msgAdapter controller )
     {
         this.fromList = currentFromList;
         this.messages = currentMessagesList;
@@ -94,7 +92,7 @@ public class msgCallback implements ICallBack
     @Override
     public void onMessageSendSuccess(String s)
     {
-        this.messagesController.notifyDataSetChanged();
+//        this.messagesController.notifyDataSetChanged();
     }
 
     @Override
@@ -105,7 +103,7 @@ public class msgCallback implements ICallBack
     {
         this.fromList.add( from );
         this.messages.add( msg );
-        this.messagesController.notifyDataSetChanged();
+//        this.messagesController.notifyDataSetChanged();
     }
 
     @Override

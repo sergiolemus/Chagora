@@ -12,6 +12,10 @@ import java.util.ArrayList;
 
 public class MsgViewActivity extends AppCompatActivity {
 
+    msgAdapter msgDisplay;
+    msgAPI API;
+    String firstname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +26,24 @@ public class MsgViewActivity extends AppCompatActivity {
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
         Button backActivity = (Button) findViewById(R.id.backBttn);
 
+        Button sendAction = (Button) findViewById(R.id.sendBttn);
+
         ArrayList<String> messages = new ArrayList<String>();
         ArrayList<String> fromList = new ArrayList<String>();
         ListView msgListView = (ListView) findViewById(R.id.msgListView);
+
+        if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
+        {
+            TextView firstnameView = (TextView) findViewById(R.id.firstnameTextView);
+            firstname = getIntent().getExtras().getString("com.example.segoo.chagora.FIRSTNAME");
+            firstnameView.setText( firstname );
+
+            this.msgDisplay = new msgAdapter( this, firstname, fromList, messages );
+            msgListView.setAdapter( this.msgDisplay );
+
+            API = new msgAPI(this, fromList, messages, msgDisplay );
+            API.login( "SELF" );
+        }
 
         callActivity.setOnClickListener( new View.OnClickListener() {
 
@@ -70,13 +89,18 @@ public class MsgViewActivity extends AppCompatActivity {
             }
         });
 
-        if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
-        {
-            TextView firstnameView = (TextView) findViewById(R.id.firstnameTextView);
+        sendAction.setOnClickListener(new View.OnClickListener() {
 
-            String firstname = getIntent().getExtras().getString("com.example.segoo.chagora.FIRSTNAME");
+            @Override
+            public void onClick(View v) {
 
-            firstnameView.setText( firstname );
-        }
+                TextView inputMsgTextView = (TextView) findViewById(R.id.inputMsgTextView);
+                String inputMsg = inputMsgTextView.getText().toString();
+
+                inputMsgTextView.setText( null );
+
+                API.sendMessage( firstname, inputMsg );
+            }
+        });
     }
 }
