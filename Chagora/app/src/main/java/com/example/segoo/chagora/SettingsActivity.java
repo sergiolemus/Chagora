@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -15,6 +16,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         Button callActivity = (Button) findViewById(R.id.callBttn);
         Button msgActivity = (Button) findViewById(R.id.msgBttn);
+        Button updateAction = (Button) findViewById(R.id.updateBttn);
+        EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+
 
         callActivity.setOnClickListener( new View.OnClickListener() {
 
@@ -35,6 +39,16 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent msgIntent = new Intent( getApplicationContext(), TextActivity.class );
 
                 startActivity( msgIntent );
+            }
+        });
+
+        updateAction.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                
+
             }
         });
 
