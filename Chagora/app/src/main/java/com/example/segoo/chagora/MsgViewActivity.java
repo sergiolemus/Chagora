@@ -12,9 +12,13 @@ import java.util.ArrayList;
 
 public class MsgViewActivity extends AppCompatActivity {
 
-    msgAdapter msgDisplay;
     msgAPI API;
     String firstname;
+    msgAdapter msgDisplay;
+
+    ArrayList<String> messages;
+    ArrayList<String> fromList;
+    ListView msgListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +32,9 @@ public class MsgViewActivity extends AppCompatActivity {
 
         Button sendAction = (Button) findViewById(R.id.sendBttn);
 
-        ArrayList<String> messages = new ArrayList<String>();
-        ArrayList<String> fromList = new ArrayList<String>();
-        ListView msgListView = (ListView) findViewById(R.id.msgListView);
+        messages = new ArrayList<String>();
+        fromList = new ArrayList<String>();
+        msgListView = (ListView) findViewById(R.id.msgListView);
 
         if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
         {

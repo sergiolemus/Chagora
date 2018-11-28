@@ -1,5 +1,7 @@
 package com.example.segoo.chagora;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 import io.agora.IAgoraAPI.ICallBack;
@@ -101,8 +103,9 @@ public class msgCallback implements ICallBack
     @Override
     public void onMessageInstantReceive( String from, int uid, String msg )
     {
-        this.fromList.add( from );
-        this.messages.add( msg );
+        Log.d("MSG", from + ": " + msg );
+//        this.fromList.add( from );
+//        this.messages.add( msg );
 //        this.messagesController.notifyDataSetChanged();
     }
 

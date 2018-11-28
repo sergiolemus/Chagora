@@ -1,6 +1,7 @@
 package com.example.segoo.chagora;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,9 @@ public class msgAPI {
 
         this.API.messageInstantSend( to, uid, msg, msgID );
 
-        this.messages.add( msg );
-        this.fromList.add( username );
+//        this.messages.add( msg );
+//        this.fromList.add( username );
+
+        Log.d("MSG", "SELF: " + msg );
     }
 }
