@@ -19,7 +19,6 @@ public class SettingsActivity extends AppCompatActivity {
         Button updateAction = (Button) findViewById(R.id.updateBttn);
         EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
 
-
         callActivity.setOnClickListener( new View.OnClickListener() {
 
             @Override

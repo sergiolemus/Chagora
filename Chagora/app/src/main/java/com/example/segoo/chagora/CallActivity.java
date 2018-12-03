@@ -13,7 +13,6 @@ public class CallActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
 
-
         Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
         Button msgActivity = (Button) findViewById(R.id.msgBttn);
         Button newCallActivity = (Button) findViewById(R.id.newCallBttn);

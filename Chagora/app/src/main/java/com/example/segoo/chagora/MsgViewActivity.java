@@ -25,9 +25,6 @@ public class MsgViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_msg_view);
 
-        Button msgActivity = (Button) findViewById(R.id.msgBttn);
-        Button callActivity = (Button) findViewById(R.id.callBttn);
-        Button settingsActivity = (Button) findViewById(R.id.settingsBttn);
         Button backActivity = (Button) findViewById(R.id.backBttn);
 
         Button sendAction = (Button) findViewById(R.id.sendBttn);
@@ -49,28 +46,6 @@ public class MsgViewActivity extends AppCompatActivity {
             API.login( "SELF" );
         }
 
-        callActivity.setOnClickListener( new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent callIntent = new Intent( getApplicationContext(), CallActivity.class );
-
-                startActivity( callIntent );
-            }
-        });
-
-        settingsActivity.setOnClickListener( new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent settingsIntent = new Intent( getApplicationContext(), SettingsActivity.class );
-
-                startActivity( settingsIntent );
-            }
-        });
-
         backActivity.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -79,17 +54,6 @@ public class MsgViewActivity extends AppCompatActivity {
                 Intent backIntent = new Intent( getApplicationContext(), TextActivity.class );
 
                 startActivity( backIntent );
-            }
-        });
-
-        msgActivity.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent msgIntent = new Intent( getApplicationContext(), TextActivity.class );
-
-                startActivity( msgIntent );
             }
         });
 
