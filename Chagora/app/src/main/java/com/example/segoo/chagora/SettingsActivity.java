@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -17,7 +17,6 @@ public class SettingsActivity extends AppCompatActivity {
         Button callActivity = (Button) findViewById(R.id.callBttn);
         Button msgActivity = (Button) findViewById(R.id.msgBttn);
         Button updateAction = (Button) findViewById(R.id.updateBttn);
-        EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
 
         callActivity.setOnClickListener( new View.OnClickListener() {
 
@@ -46,8 +45,12 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                
+                TextView usernameTextView = (TextView) findViewById(R.id.usernameTextView);
+                String username = usernameTextView.getText().toString();
 
+                usernameTextView.setText( null );
+
+                ((BackgroundSignaling) getApplication( )).setUsername( username );
             }
         });
 

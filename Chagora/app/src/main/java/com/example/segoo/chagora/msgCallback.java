@@ -12,12 +12,7 @@ public class msgCallback implements ICallBack
     private ArrayList<String> messages;
     private msgAdapter messagesController;
 
-    public msgCallback( ArrayList<String> currentFromList, ArrayList<String> currentMessagesList, msgAdapter controller )
-    {
-        this.fromList = currentFromList;
-        this.messages = currentMessagesList;
-        this.messagesController = controller;
-    }
+    public msgCallback( ){}
 
     @Override
     public void onReconnecting(int i) {}
@@ -26,13 +21,22 @@ public class msgCallback implements ICallBack
     public void onReconnected(int i) {}
 
     @Override
-    public void onLoginSuccess(int i, int i1) {}
+    public void onLoginSuccess( int i, int i1 )
+    {
+        Log.d("MSG","LOGIN SUCCESSFUL!");
+    }
 
     @Override
-    public void onLogout(int i) {}
+    public void onLogout(int i)
+    {
+//        Log.d("MSG","LOGOUT SUCCESSFUL!");
+    }
 
     @Override
-    public void onLoginFailed(int i) {}
+    public void onLoginFailed(int i)
+    {
+        Log.d("MSG","LOGIN FAILED!");
+    }
 
     @Override
     public void onChannelJoined(String s) {}

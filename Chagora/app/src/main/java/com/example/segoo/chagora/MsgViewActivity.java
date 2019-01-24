@@ -3,6 +3,7 @@ package com.example.segoo.chagora;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -26,12 +27,11 @@ public class MsgViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_msg_view);
 
         Button backActivity = (Button) findViewById(R.id.backBttn);
-
         Button sendAction = (Button) findViewById(R.id.sendBttn);
 
-        messages = new ArrayList<String>();
-        fromList = new ArrayList<String>();
         msgListView = (ListView) findViewById(R.id.msgListView);
+
+//        BackgroundSignaling instance = (BackgroundSignaling) getApplication( );
 
         if( getIntent().hasExtra("com.example.segoo.chagora.FIRSTNAME") )
         {
@@ -39,11 +39,11 @@ public class MsgViewActivity extends AppCompatActivity {
             firstname = getIntent().getExtras().getString("com.example.segoo.chagora.FIRSTNAME");
             firstnameView.setText( firstname );
 
-            this.msgDisplay = new msgAdapter( this, firstname, fromList, messages );
-            msgListView.setAdapter( this.msgDisplay );
+//            this.msgDisplay = new msgAdapter( this, firstname, fromList, messages );
+//            msgListView.setAdapter( this.msgDisplay );
 
-            API = new msgAPI(this, fromList, messages, msgDisplay );
-            API.login( "SELF" );
+            API = ((BackgroundSignaling) getApplication( )).getMessenger( );
+//            API = new msgAPI(this, "SELF" );
         }
 
         backActivity.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +68,10 @@ public class MsgViewActivity extends AppCompatActivity {
                 inputMsgTextView.setText( null );
 
                 API.sendMessage( firstname, inputMsg );
+
+                String username = ((BackgroundSignaling) getApplication( )).getUsername( );
+
+                Log.d( "MSG", username + ": " + inputMsg );
             }
         });
     }

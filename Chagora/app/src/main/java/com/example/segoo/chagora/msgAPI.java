@@ -11,7 +11,6 @@ public class msgAPI {
 
     private String appid = "41c860e5c1c847b996a2b8efd8274a2c";
 
-    private String username;
     private AgoraAPIOnlySignal API;
     private msgCallback Callback;
 
@@ -19,16 +18,11 @@ public class msgAPI {
     private ArrayList<String> messages;
     private msgAdapter messagesController;
 
-    public msgAPI( Context context, ArrayList<String> currentFromList, ArrayList<String> currentMessages, msgAdapter controller )
+    public msgAPI( Context context )
     {
-        this.fromList = currentFromList;
-        this.messages = currentMessages;
-        this.messagesController = controller;
-        this.username = null;
-
         this.API = AgoraAPIOnlySignal.getInstance( context, appid );
 
-        this.Callback = new msgCallback( fromList, messages, messagesController );
+        this.Callback = new msgCallback( );
         this.API.callbackSet( Callback );
     }
 
@@ -41,7 +35,7 @@ public class msgAPI {
 
         this.API.login( this.appid, user, token, uid, deviceID );
 
-        this.username = user;
+        Log.d("MSG","LOGGING IN: " + user );
     }
 
     public void sendMessage( String to, String msg )
@@ -54,6 +48,11 @@ public class msgAPI {
 //        this.messages.add( msg );
 //        this.fromList.add( username );
 
-        Log.d("MSG", "SELF: " + msg );
+//        Log.d("MSG", "SELF: " + msg );
+    }
+
+    public void logout( )
+    {
+        this.API.logout( );
     }
 }
